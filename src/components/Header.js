@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Countdown from './Countdown'
 
 const Header = (props) => (
     <header id="header" style={props.timeout ? { display: 'none' } : {}}>
-        <div className="logo">
-            <span className="icon fa-heart"></span>
+        <div className="countdown-container">
+            <Countdown/>
         </div>
         <div className="content">
             <div className="inner">
@@ -15,10 +16,14 @@ const Header = (props) => (
         </div>
         <nav>
             <ul>
-                <li><a href="javascript:;" onClick={() => { props.onOpenArticle('rsvp') }}>RSVP</a></li>
-                <li><a href="javascript:;" onClick={() => { props.onOpenArticle('where') }}>Where</a></li>
-                <li><a href="javascript:;" onClick={() => { props.onOpenArticle('about') }}>Lodging</a></li>
-                <li><a href="javascript:;" onClick={() => { props.onOpenArticle('gifts') }}>Gifts</a></li>
+                {/* eslint-disable-next-line */}
+                <li><a href="true" onClick={() => { props.onOpenArticle('rsvp') }}>RSVP</a></li>
+                 {/* eslint-disable-next-line */}
+                <li><a href="true" onClick={() => { props.onOpenArticle('where') }}>Where</a></li>
+                 {/* eslint-disable-next-line */}
+                <li><a href="true" onClick={() => { props.onOpenArticle('about') }}>Lodging</a></li>
+                 {/* eslint-disable-next-line */}
+                <li><a href="true" onClick={() => { props.onOpenArticle('gifts') }}>Gifts</a></li>
             </ul>
         </nav>
     </header>

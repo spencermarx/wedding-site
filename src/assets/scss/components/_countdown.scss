@@ -1,0 +1,19 @@
+/* Countdown */
+
+#Countdown {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+
+  .Countdown-Inner {
+    margin: 0rem;
+    width: 100%;
+  }
+
+  .Countdown-Number {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+  }
+}
