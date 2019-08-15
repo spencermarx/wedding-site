@@ -5,6 +5,10 @@ yarn-error.log
 package-lock.json
 yarn.lock
 
+# Google Map API Key
+.env.development
+.env
+
 # Build directory
 /public
 .DS_Store
