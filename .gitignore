@@ -7,7 +7,7 @@ yarn.lock
 
 # Google Map API Key
 .env.development
-.env
+.env.production
 
 # Build directory
 /public

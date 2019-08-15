@@ -1,21 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Map from './Map'
+import HotelOptions from './HotelOptions'
 
-import pic01 from '../images/pic01.jpg'
-import pic03 from '../images/pic03.jpg'
+import imageMoney from '../images/imageMoney.jpg'
 
 class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      language: 'en',
+    }
+  }
   render() {
 
-    let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
+    let close = <div className="close" onClick={() => { this.props.onCloseArticle() }}></div>
 
     return (
-      <div ref={this.props.setWrapperRef} id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
+      <div ref={this.props.setWrapperRef} id="main" style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}>
 
-<article id="rsvp" className={`${this.props.article === 'rsvp' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+        <article id="rsvp" className={`${this.props.article === 'rsvp' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
           <h2 className="major">RSVP</h2>
-          <form method="post" action="#">
+          <form
+          name="rsvp"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="rsvp" />
             <div className="field half first">
               <label htmlFor="name">Family Name</label>
               <input type="text" name="name" id="name" />
@@ -36,28 +47,32 @@ class Main extends React.Component {
           {close}
         </article>
 
-        <article id="where" className={`${this.props.article === 'where' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+        <article id="where" className={`${this.props.article === 'where' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
           <h2 className="major">Where</h2>
-          <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-          <div style={{width: '100%', height: '400px'}}>
-            <Map/>
+          <p>We will be hosting both the ceremony and reception at the beautiful Plimouth Plantation. Autumn will have arrived, so be sure to bring a jacket!</p>
+          <div style={{ width: '100%', height: '400px' }}>
+            <Map />
           </div>
 
           {close}
         </article>
 
-        <article id="lodging" className={`${this.props.article === 'lodging' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+        <article id="lodging" className={`${this.props.article === 'lodging' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
           <h2 className="major">Lodging</h2>
-          <span className="image main"><img src={pic03} alt="" /></span>
-          <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+          <p>Here is a list of affordable hotels and other accommodations close by the wedding venue. Feel free to check Airbnbs as well! We recommend that you book as soon as possible so you get a better rate. If you have any other questions, don't hesitate to reach out!</p>
+          <HotelOptions />
           {close}
         </article>
 
-        <article id="gifts" className={`${this.props.article === 'gifts' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+        <article id="gifts" className={`${this.props.article === 'gifts' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
           <h2 className="major">Gifts</h2>
-          <span className="image main"><img src={pic01} alt="" /></span>
-          <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+          <span className="image main"><img src={imageMoney} alt="" /></span>
+          <p>
+            Please do not feel obliged to buy us a gift; all that we are expecting is you. If you would like to give something, a contribution towards our future would be greatly appreciated! Thank you!
+          </p>
+          <p style={{ fontWeight: '600' }}> – Angie and Spencer Marx</p>
+          <p style={{ textAlign: 'center', borderTop: 'solid 1px white', margin: '0', paddingTop: '1rem' }}>37 Crescent Ave</p>
+          <p style={{ textAlign: 'center', borderBottom: 'solid 1px white', paddingBottom: '1rem' }}>Plymouth, MA 02360</p>
           {close}
         </article>
 
