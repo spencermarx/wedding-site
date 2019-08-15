@@ -17,13 +17,13 @@ const Header = (props) => (
         <nav>
             <ul>
                 {/* eslint-disable-next-line */}
-                <li><a href="true" onClick={() => { props.onOpenArticle('rsvp') }}>RSVP</a></li>
+                <li><a href="javascript:;" onClick={() => { props.onOpenArticle('rsvp') }}>RSVP</a></li>
                  {/* eslint-disable-next-line */}
-                <li><a href="true" onClick={() => { props.onOpenArticle('where') }}>Where</a></li>
+                <li><a href="javascript:;" onClick={() => { props.onOpenArticle('where') }}>Where</a></li>
                  {/* eslint-disable-next-line */}
-                <li><a href="true" onClick={() => { props.onOpenArticle('about') }}>Lodging</a></li>
+                <li><a href="javascript:;" onClick={() => { props.onOpenArticle('lodging') }}>Lodging</a></li>
                  {/* eslint-disable-next-line */}
-                <li><a href="true" onClick={() => { props.onOpenArticle('gifts') }}>Gifts</a></li>
+                <li><a href="javascript:;" onClick={() => { props.onOpenArticle('gifts') }}>Gifts</a></li>
             </ul>
         </nav>
     </header>
