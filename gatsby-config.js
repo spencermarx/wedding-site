@@ -1,21 +1,23 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Dimension V2",
-    author: "Hunter Chang",
-    description: "A Gatsby.js V2 Starter based on Dimension by HTML5 UP"
+    title: "Angie & Spencer Marx | Wedding Site",
+    author: "Angie and Spencer Marx",
+    description: "Wedding site for Angie and Spencer Marx"
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        name: `Angie + Spencer | Wedding Site`,
+        short_name: `A+S | Wedding `,
+        description: `The wedding site for Angie and Spencer Marx`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+        start_url: `/`,
+        background_color: `#FFF`,
+        theme_color: `#000`,
       },
     },
     'gatsby-plugin-sass',
