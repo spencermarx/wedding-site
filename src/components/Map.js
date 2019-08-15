@@ -1,25 +1,10 @@
 import React from 'react'
 import GoogleMap from 'google-map-react'
-import heartPin from '../images/heart-pin.png'
-
-const Pin = ({ text }) => (
-    <div style={{
-        backgroundImage: heartPin,
-        padding: '15px 10px',
-        display: 'inline-flex',
-        textAlign: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '100%',
-        transform: 'translate(-50%, -50%)'
-    }}>
-        {text}
-    </div>
-);
+import Pin from './Pin'
 
 class Map extends React.Component {
     static defaultProps = {
-        center: { lat: 41.9393938, lng: -70.625786 },
+        center: { lat: 41.938115, lng: -70.625427 },
         zoom: 11
     };
 
@@ -31,10 +16,12 @@ class Map extends React.Component {
                 defaultZoom={this.props.zoom}
             >
                 <Pin
-                    lat={41.9393938}
-                    lng={-70.625786}
-                    text={'Plimouth Plantation'}
+                    lat={41.938115}
+                    lng={-70.625427}
+                    name='Plimouth Plantation'
+                    color='#f17b7b'
                 />
+
             </GoogleMap>
         );
     }
