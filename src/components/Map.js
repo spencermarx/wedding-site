@@ -11,7 +11,7 @@ class Map extends React.Component {
     render() {
         return (
             <GoogleMap
-                bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLE_API_KEY }}
+                bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLE_MAPS_API_KEY }}
                 defaultCenter={this.props.center}
                 defaultZoom={this.props.zoom}
             >
