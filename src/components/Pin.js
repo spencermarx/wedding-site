@@ -1,6 +1,7 @@
 import React from 'react';
 
-const handleClick = () => {
+const handleClick = (e) => {
+    e.preventDefault();
     window.open('https://www.plimoth.org/visit/getting-here', '_blank');
 }
 
