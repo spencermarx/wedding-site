@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import ContactForm from './ContactForm'
 import Map from './Map'
 import HotelOptions from './HotelOptions'
 
@@ -21,29 +22,7 @@ class Main extends React.Component {
 
         <article id="rsvp" className={`${this.props.article === 'rsvp' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
           <h2 className="major">RSVP</h2>
-          <form
-          name="rsvp"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="rsvp" />
-            <div className="field half first">
-              <label htmlFor="name">Family Name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div className="field half">
-              <label htmlFor="attending">How many will attend?</label>
-              <input type="text" name="attending" id="attending" />
-            </div>
-            <div className="field">
-              <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
-            </div>
-            <ul className="actions">
-              <li><input type="submit" value="Send Message" className="special" /></li>
-              <li><input type="reset" value="Reset" /></li>
-            </ul>
-          </form>
+          <ContactForm/>
           {close}
         </article>
 
