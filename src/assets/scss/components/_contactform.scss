@@ -1,0 +1,11 @@
+/* Contact Form */
+
+.ContactForm {
+  height: 360px;
+}
+
+@include breakpoint(xsmall) {
+  .ContactForm {
+    height: 440px;
+  }
+}
