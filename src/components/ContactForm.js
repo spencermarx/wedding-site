@@ -71,7 +71,6 @@ class ContactForm extends Component {
                         <ErrorForm handleReset={this.handleReset} />
                     ) : (
                             <div>
-                                <input type="hidden" name="form-name" value="rsvp" />
                                 <div className="field half first">
                                     <label htmlFor="name">Family Name *</label>
                                     <input
@@ -119,7 +118,7 @@ class ContactForm extends Component {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "inquiryForm", ...formObject })
+            body: encode({ "form-name": "rsvp", ...formObject })
         })
             .then((result) => {
                 console.log("Success!");
