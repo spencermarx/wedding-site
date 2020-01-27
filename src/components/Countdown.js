@@ -11,7 +11,7 @@ const daysUntil = () => {
     const distance = countDownDate - now;
 
     // Return days until
-    return (Math.floor(distance / (1000 * 60 * 60 * 24)) + 1);
+    return (Math.abs(Math.floor(distance / (1000 * 60 * 60 * 24)) + 1));
 }
 
 
@@ -21,7 +21,7 @@ const Countdown = (props) => {
     return (
         <div id="Countdown">
             <p className="Countdown-Inner Countdown-Number">{days} </p>
-            <p className="Countdown-Inner Countdown-Text">Days Left</p>
+            <p className="Countdown-Inner Countdown-Text">Days Since</p>
         </div>
     )
 }
